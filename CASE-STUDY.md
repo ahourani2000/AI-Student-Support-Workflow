@@ -232,3 +232,97 @@ The workflow therefore treats human escalation as an intentional product capabil
 Finalizing a response and delivering it are different tasks.
 
 Staff should retain responsibility for the response itself, while a workflow automation can handle the repetitive delivery step once the inquiry is resolved.
+
+## Success Metrics
+
+The prototype establishes a foundation for measurement, but it has not yet demonstrated quantified business outcomes.
+
+For a production pilot, I would define a baseline and evaluate the following metrics.
+
+| Dimension | Metric | What it measures |
+| --- | --- | --- |
+| Efficiency | Median time to resolution | Whether the workflow reduces time spent handling inquiries |
+| Efficiency | Staff handling time per inquiry | Whether routine work becomes less labor-intensive | 
+| AI quality | Retrieval accuracy | Whether the correct approved knowledge is selected|
+| AI quality | Grounded-response rate | Whether generated responses accurately reflect their sources |
+| AI quality | Staff correction rate | How frequently staff need to materially edit responses |
+| Safety | Escalation precision and recall | Whether inquiries requiring human review are correctly identified |
+| Safety | Unsupported-answer rate | How often responses contain claims not supported by approved knowledge |
+| Student experience | Student satisfaction | Whether the support experience improves |
+| Student experience | Repeat inquiry rate | Whether students receive sufficiently clear and complete answers |
+| Operations | Automated delivery success rate | Whether finalized responses are successfully sent |
+
+### Evaluation Approach
+
+I would begin with a controlled pilot using a defined set of low-risk inquiry categories and a staff-reviewed test set.
+
+The pilot would compare AI-assisted handling with the existing process, track errors and corrections, and expand only when quality and safety criteria are met.
+
+The objective would not be to maximize automation at any cost. It would be to improve operational efficiency while maintaining reliable responses and appropriate human oversight.
+
+## Limitations and Production Considerations
+
+This project is a no-code prototype, not a production student-support system.
+
+Several areas would need additional work before institutional deployment.
+
+### Knowledge Quality and Ownership
+
+Institutional staff would need to validate the knowledge records, resolve inconsistencies, assign owners, and establish review and expiration policies.
+
+### Retrieval and Response Evaluation 
+
+The current relevance-matching approach needs a larger evaluation set, measured retrieval accuracy, and systematic assessment of response grounding. A model-generated confidence value should not be treated as a calibrated probability of factual correctness.
+
+### Privacy and Access Controls
+
+A production deployment would require an assessment of student-data sensitivity, data retention, access permissions, and the suitability of each connected service. Account-specific support would require appropriate authentication and secure integrations rather than relying on the public information prototype.
+
+### Operational Reliability
+
+The prototype uses scheduled workflows and is constrained by free-tier automation limits. Production use would require validated latency expectations, failure handling, monitoring, duplicate prevention, and reliable notifications.
+
+### Email Delivery Safeguards
+
+The email automation should be tested for missing email addresses, blank final responses, duplicate sends, delivery failures, and changes to a resolved record.
+
+### Institutional Integration
+
+The prototype does not connect to Miftaah's private systems or student records. A production design would require stakeholder discovery to determine the appropriate integrations, ownership, and security requirements.
+
+## Future Roadmap
+
+### Phase 1 — Prototype and workflow validation
+
+* Build intake and AI-processing workflows.
+* Establish the structured knowledge base.
+* Implement classification, retrieval, response generation, and escalation.
+* Create the staff interface and dashboard.
+* Test known-answer, unknown-answer, exception, and account-specific scenarios.
+* Validate the integrated workflow from intake through email delivery.
+
+### Phase 2 — Stakeholder and knowledge validation
+
+* Interview support staff to identify frequent inquiry categories.
+* Validate institutional answers and source ownership.
+* Define which inquiry types are eligible for automation.
+* Establish escalation policies and review procedures.
+* Agree on success metrics and acceptance criteria.
+
+### Phase 3 — Controlled pilot
+
+* Start with high-volume, low-risk inquiry categories.
+* Evaluate retrieval and response quality against a staff-reviewed dataset.
+* Monitor staff corrections and escalation accuracy.
+* Validate privacy, access, email delivery, and operational reliability.
+* Compare pilot results with the existing support process.
+
+### Phase 4 — Production integration and improvement
+
+* Integrate approved intake channels and institutional systems.
+* Establish monitoring, notifications, and failure recovery.
+* Analyze recurring staff edits and unanswered questions.
+* Propose knowledge improvements for staff review.
+* Expand automation gradually based on measured performance.
+
+AI-generated feedback would not automatically modify institutional knowledge. Proposed changes would require appropriate human review and approval.
